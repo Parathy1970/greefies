@@ -1,0 +1,193 @@
+.wrapper {
+  min-height: 100vh; // toute la hauteur de l'écran
+  width: 90%;
+  margin: 0 auto;
+/*  background-color: #ef9a9a; // pour les tests */
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;  // les éléments sont flexibles, capables de s'agrandir, se rétrécir, prendre l'espace disponible
+}
+.top{
+  img{
+    margin: 1%;
+  }
+}
+.header {
+   background: #4caf50;
+   .nav {
+    background: #004d40;
+    display: flex;
+    justify-content: center;
+
+    & img {
+      transform: translateX(20px); // l'image est décalé vers la droite de 10px et pour decaler a gauche -10px
+    }
+
+    & a {
+      padding: 0.5% 2%;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 1.5rem;
+    }
+  } // fin nav
+
+  .entete2 {
+/*    margin: 0 0 5% 0; */
+    padding: 1% 0 0 0;
+    color: #ffffff;
+    display: flex;
+
+    &__1 { // Horloge
+      width: 15%;
+      padding: 1% 0.3% 5% 3%;
+    }
+
+    &__2 { // What is your biological clock ?
+      width: 40%;
+      padding: 1% 0.3% 5% 1.8%;
+      display: flex;
+      flex-direction: column;
+
+      & a { // bouton read more
+        background: #ffa000;
+        width: 15%;
+        height: 10%;
+        border-radius: 48px;
+        margin: 1% 0 0 80%;
+        padding: 0.5%;
+        text-align: center;
+        text-decoration: none;
+        color: #ffffff;
+        font-weight: 900;
+      }
+    }
+
+    &__3 { // 5 Fleches blanc sur fond orange
+      width: 35%;
+      padding: 1% 0.3% 5% 1.8%;
+      display: flex;
+      flex-direction: column;
+
+      & a{ // Fleche blanc sur fond orange
+        background: #66bb6a;
+        width: 55%;
+        margin: 1% 1% 1% 5%;
+        padding: 1.5%;
+        text-decoration: none;
+        color: #ffffff;
+
+        & span{
+          padding: 1% 0 5% 3%;
+        }
+
+        & img {
+          transform: translateY(2px); // l'image descend de 2px
+        }
+      }
+      & a:hover { //au survol de la souris
+        background: #a5d6a7;
+      }
+    } // fin entete2__3
+  } // fin entete2
+} // fin entete
+
+.content{
+  display: flex;
+
+  &__left{
+    border: 2px solid black; // TEST
+    background-color: #f5f5f5;
+    margin: 1% 1% 0 1%;
+    width: 40%;
+    display: flex;
+    flex-flow: row wrap;
+
+    &__welcome{ // Welcome to greefies
+      margin-left: 2%;
+      margin-right: 2%;
+      & h2{
+        color: #ffa000;
+        font-weight: 900;
+      }
+    }
+
+    &__menu{
+      display: flex;
+      flex-direction: column;
+      width: 100%; // 100% menu == 40% conteneur
+      margin-left: 2%;
+      margin-right: 2%;
+
+      & a{ // lien Lorem ipsum dolor sit amet.
+        padding: 1% 0 1% 0;
+        text-decoration: none;
+        border-bottom: 1px dashed #a5d6a7;
+        color: #00b8d4;
+        font-size: 1.1rem;
+      }
+      & span{ // Lorem ipsum dolor sit amet.
+        padding: 0 0 0 1%;
+      }
+      & img{ // left_nav_arrow
+        transform: translateY(3px); // l'image redescend de 3px
+      }
+    } // fin content_left_menu
+
+    &__pot__fleur{
+      margin: 2%;
+
+      & .float{
+        float: left;
+        margin-right: 2%;
+      }
+      & a{
+        text-decoration: none;
+        color: #ffa000;
+        margin-left: 50%;
+        }
+      & span {
+        font-weight: 900;
+        padding: 0 3% 0 0;
+      }
+      & .orange_bullet {
+        transform: translateY(3px); // l'image redescend de 3px
+      }
+    } // content__left__pot__fleur
+  } // fin content_left
+
+  &__right{
+    border: 2px solid red;
+    width: 60%;
+    margin: 1% 3% 0 2%;
+    display: flex;
+    flex-flow: row wrap;
+    & h2{
+      color: #ffa000;
+      font-weight: 900;
+    }
+    &__boite {
+       border-bottom: 1px dashed #a5d6a7;
+
+      & .boite {
+      float: left;
+      margin-right: 3%;
+      transform: translateY(11px); // l'image redescend de 3px
+      }
+
+      & a {
+        text-decoration: none;
+        color: #ffa000;
+        margin-left: 85%;
+       }
+
+      & .orange_bullet {
+        transform: translateY(3px); // l'image redescend de 3px
+      }
+
+      & span {
+        font-weight: 900;
+        padding: 0 1% 5% 0;
+      }
+    }
+  }  // fin content_right
+} // fin content

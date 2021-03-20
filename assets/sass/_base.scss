@@ -1,0 +1,19 @@
+// importer les polices Lato
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+
+*::before,
+*::after {
+  margin: 0;   // suppression la marge extérieure générée par le navigateur
+  padding: 0;  // suppression la marge intérieure générée par le navigateur
+  box-sizing: inherit;
+}
+
+html {
+//  font-size: 62.5%;
+  font-size: 80%;
+}
+
+body {
+  box-sizing: border-box; // la hauteur et la largeur totale d'un élément est calculée est forcée à rester sur la page
+  font-family: 'Lato', sans-serif; // si police Lora non trouvé alor par défaut sans-serif
+}
