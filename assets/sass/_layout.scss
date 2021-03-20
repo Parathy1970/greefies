@@ -7,38 +7,39 @@
   flex-direction: column;
   flex: 1 1 auto;  // les éléments sont flexibles, capables de s'agrandir, se rétrécir, prendre l'espace disponible
 }
-.top{
-  img{
-    margin: 1%;
-  }
-}
+
 .header {
-   background: #4caf50;
-   .nav {
+  background: #00695c;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .nav { //barre des menus
     background: #004d40;
+    min-width: 100%;
     display: flex;
     justify-content: center;
 
-    & img {
-      transform: translateX(20px); // l'image est décalé vers la droite de 10px et pour decaler a gauche -10px
+    & img { // chevron blanc
+      transform: translateX(20px); // l'image décalée vers la droite
     }
 
     & a {
-      padding: 0.5% 2%;
+      padding: 0.5% 2%; // augmenter l'espace autour du menu
       color: #ffffff;
       text-decoration: none;
       font-size: 1.5rem;
     }
-  } // fin nav
+  } // fin barre des menus
 
   .entete2 {
-/*    margin: 0 0 5% 0; */
     padding: 1% 0 0 0;
     color: #ffffff;
     display: flex;
 
     &__1 { // Horloge
-      width: 15%;
+      width: 15%; // 15% de largeur de Entete2
       padding: 1% 0.3% 5% 3%;
     }
 
@@ -62,7 +63,7 @@
       }
     }
 
-    &__3 { // 5 Fleches blanc sur fond orange
+    &__3 { // 5 boutons à fleche blanche sur fond orange
       width: 35%;
       padding: 1% 0.3% 5% 1.8%;
       display: flex;
@@ -71,7 +72,7 @@
       & a{ // Fleche blanc sur fond orange
         background: #66bb6a;
         width: 55%;
-        margin: 1% 1% 1% 5%;
+        margin: 1% 1% 1% 20%;
         padding: 1.5%;
         text-decoration: none;
         color: #ffffff;
@@ -92,15 +93,14 @@
 } // fin entete
 
 .content{
-  display: flex;
+  display: flex; // pour .left et .wright se mettre cote à cote
 
   &__left{
-    border: 2px solid black; // TEST
     background-color: #f5f5f5;
     margin: 1% 1% 0 1%;
     width: 40%;
     display: flex;
-    flex-flow: row wrap;
+    flex-direction: column;
 
     &__welcome{ // Welcome to greefies
       margin-left: 2%;
@@ -112,9 +112,9 @@
     }
 
     &__menu{
-      display: flex;
+      display: flex; //obligatoire car menu contient plusieurs lignes
       flex-direction: column;
-      width: 100%; // 100% menu == 40% conteneur
+      width: 100%; // pour que la ligne pointillée sur la largeur du content__left__menu
       margin-left: 2%;
       margin-right: 2%;
 
@@ -156,11 +156,10 @@
   } // fin content_left
 
   &__right{
-    border: 2px solid red;
     width: 60%;
     margin: 1% 3% 0 2%;
     display: flex;
-    flex-flow: row wrap;
+    flex-direction: column;
     & h2{
       color: #ffa000;
       font-weight: 900;
@@ -189,5 +188,65 @@
         padding: 0 1% 5% 0;
       }
     }
+
+    & .message_contact{
+      margin: 2% 0 0 0;
+      display: flex;
+
+      & .messages{
+        width: 50%;
+        &__symbole_recherche{
+          transform: translateX(-85px) translateY(-38px); // l'image redescend de 3px
+        }
+        &__saisir{
+          transform: translateX(10px) translateY(-135px); // l'image redescend de 3px
+          & h3{
+            color: #689f38 ;
+          }
+        }
+      }
+
+      & .contact{
+        margin: 0 0 0 5%;
+        width: 50%;
+        display: flex; //**
+        flex-direction: column; //**
+
+         & h3{ // Free Customers support
+          margin: 0 0 5% 0;
+           color: #689f38 ;
+        }
+
+        & .contact__moyen{
+          display: flex; // symbole tel et numeros tel ou symbole courriel et courriels
+          margin: 0 0 3% 0; // espace entre symbole tel et courriel
+          &__info{  // tel ou courriel
+            display: flex;
+            flex-direction: column;
+            margin: 1% 0 0 10%;
+          }
+        } // fin contact__moyen
+      }  // fin contact
+    } // fin message_contact
   }  // fin content_right
 } // fin content
+
+.footer{
+  background: #00695c;
+   & img {
+    transform: translateY(15px); // l'image descend  à sa position initiale
+  }
+
+  &__nav{
+    margin: 0 0 0 70%; // repousser les menus vers la gauche
+    display: flex;
+    justify-content: space-around;
+    & a {
+      padding: 0 0 3% 0;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 0.7rem;
+      font-weight: bold;
+    }
+  }
+} // fin footer
