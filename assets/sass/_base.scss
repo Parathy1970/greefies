@@ -17,3 +17,10 @@ body {
   box-sizing: border-box; // la hauteur et la largeur totale d'un élément est calculée est forcée à rester sur la page
   font-family: 'Lato', sans-serif; // si police Lora non trouvé alor par défaut sans-serif
 }
+
+
+@media (max-width: 790px) {
+  html {
+     font-size: 60%;
+  }
+}
